@@ -1,0 +1,6 @@
+- id: check-binary-files
+  name: Check for Binary Files
+  description: Checks for binary files in commits
+  entry: pre_commit_hooks/check_binary_files.sh
+  language: script
+  files: .*
