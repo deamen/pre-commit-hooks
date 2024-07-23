@@ -4,3 +4,9 @@
   entry: check-binary-files
   language: python
   files: .*
+- id: dos2unix
+  name: dos2unix
+  description: Converted DOS newlines to Unix newlines in files
+  entry: dos2unix
+  language: python
+  files: .*
