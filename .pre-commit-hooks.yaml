@@ -10,3 +10,9 @@
   entry: dos2unix
   language: python
   files: .*
+- id: terraform_fmt
+  name: terraform fmt
+  description: Format Terraform files using terraform fmt
+  entry: terraform_fmt
+  language: python
+  files: \.tf$
