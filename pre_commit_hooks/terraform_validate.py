@@ -9,17 +9,18 @@ def run_terraform_validate(directory: str) -> int:
 
 
 def main(argv=None):
-    # Pre-commit passes files as positional arguments.
-    if argv is not None:
-        argv = [arg for arg in argv if not arg.endswith('.tf')]
-
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--directory', '-d', default='.',
         help='The working directory to run terraform validate in.',
     )
-    args = parser.parse_args(argv)
+    # Use `parse_known_args` to handle unexpected arguments like `.tf` files
+    args, unknown = parser.parse_known_args(argv)
 
+    # Filter out .tf files if needed (not strictly required now)
+    unknown = [arg for arg in unknown if not arg.endswith('.tf')]
+
+    # Run validation in the specified directory
     return run_terraform_validate(args.directory)
 
 
