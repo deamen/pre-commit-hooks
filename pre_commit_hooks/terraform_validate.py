@@ -9,6 +9,10 @@ def run_terraform_validate(directory: str) -> int:
 
 
 def main(argv=None):
+    # Pre-commit passes files as positional arguments.
+    if argv is not None:
+        argv = [arg for arg in argv if not arg.endswith('.tf')]
+
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--directory', '-d', default='.',
