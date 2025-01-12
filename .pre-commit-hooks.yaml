@@ -16,3 +16,9 @@
   entry: terraform_fmt
   language: python
   files: \.tf$
+- id: terraform_validate
+  name: terraform validate
+  description: Validate Terraform files using terraform validate
+  entry: terraform_validate
+  language: python
+  files: \.tf$
